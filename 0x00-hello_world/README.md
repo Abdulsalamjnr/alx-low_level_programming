@@ -1,1 +1,1 @@
-script that generates the assembly code of a C code and in an output file.
+script tthat generates the assembly code of a c code and in an output file.
