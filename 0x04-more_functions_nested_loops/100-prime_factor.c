@@ -1,23 +1,28 @@
-#include "main.h"
+#include <stdio.h>
+#include <math.h>
 
 /**
-* print_triangle - prints a trinagle using # - how cool is that?
-* @size: an int from main
-* Return: void
+* main - finds the largest prime
+* Author - Chinweike Okwuduche
+* Return: 0 if no errors
 */
 
-void print_triangle(int size)
+int main(void)
 {
-	int i, j;
+	unsigned long i = 2;
+	unsigned long biggest = 0;
+	unsigned long num = 612852475143;
 
-	if (size <= 0)
-		_putchar('\n');
-	for (i = 0; i < size; i++)
+	while (num > i)
 	{
-		for (j = size - i - 1; j > 0; j--)
-			_putchar(' ');
-		for (j = i + 1; j > 0; j--)
-			_putchar('#');
-		_putchar('\n');
+		while (num % i == 0)
+		{
+			if (i > biggest)
+				biggest = i;
+			num = num / i;
+		}
+		i++;
 	}
+	printf("%lu\n", biggest);
+	return (0);
 }
